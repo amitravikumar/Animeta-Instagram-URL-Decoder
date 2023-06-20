@@ -1,0 +1,1056 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Doodleblue User Auth Service",
+        "version": "1.0.0",
+        "title": "Doodleblue User Auth Service",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "safwaan@doodlblue.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "host": "doodlebluelive.com:2181",
+    "basePath": "/api/v1",
+    "tags": [],
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/user/otp/get": {
+            "post": {
+                "tags": [
+                    "User APIs"
+                ],
+                "summary": "response",
+                "description": "",
+                "operationId": "getOTP",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "response",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/getOTP-ForSms"
+                        }
+                    }
+                ],
+                "responses": {
+                    "409": {
+                        "description": "Conflict"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    },
+                    "200": {
+                        "description": "Successful Operation"
+                    }
+                }
+            }
+        },
+        "/user/otp/verify/register": {
+            "post": {
+                "tags": [
+                    "User APIs"
+                ],
+                "summary": "response",
+                "description": "",
+                "operationId": "verifyRegister",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "response",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/verifyRegister-WithSmsOTP"
+                        }
+                    }
+                ],
+                "responses": {
+                    "409": {
+                        "description": "Conflict"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    },
+                    "200": {
+                        "description": "Successful Operation"
+                    }
+                }
+            }
+        },
+        "/user/otp/verify/login": {
+            "post": {
+                "tags": [
+                    "User APIs"
+                ],
+                "summary": "response",
+                "description": "",
+                "operationId": "verifyLogin",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "response",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/verifyLogin-WithSmsOTP"
+                        }
+                    }
+                ],
+                "responses": {
+                    "409": {
+                        "description": "Conflict"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    },
+                    "200": {
+                        "description": "Successful Operation"
+                    }
+                }
+            }
+        },
+        "/user/login/password": {
+            "post": {
+                "tags": [
+                    "User APIs"
+                ],
+                "summary": "response",
+                "description": "",
+                "operationId": "loginWithPassword",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "response",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/loginWithPassword"
+                        }
+                    }
+                ],
+                "responses": {
+                    "409": {
+                        "description": "Conflict"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    },
+                    "200": {
+                        "description": "Successful Operation"
+                    }
+                }
+            }
+        },
+        "/user/login/username/password": {
+            "post": {
+                "tags": [
+                    "User APIs"
+                ],
+                "summary": "response",
+                "description": "",
+                "operationId": "loginWithUsername",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "response",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/loginWithUsername"
+                        }
+                    }
+                ],
+                "responses": {
+                    "409": {
+                        "description": "Conflict"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    },
+                    "200": {
+                        "description": "Successful Operation"
+                    }
+                }
+            }
+        },
+        "/user/change/password": {
+            "post": {
+                "tags": [
+                    "User APIs"
+                ],
+                "summary": "response",
+                "description": "",
+                "operationId": "changePassword",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "response",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/changePassword"
+                        }
+                    }
+                ],
+                "responses": {
+                    "409": {
+                        "description": "Conflict"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    },
+                    "200": {
+                        "description": "Successful Operation"
+                    }
+                }
+            }
+        },
+        "/user/forgot/password": {
+            "post": {
+                "tags": [
+                    "User APIs"
+                ],
+                "summary": "response",
+                "description": "",
+                "operationId": "forgotPassword",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "response",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/forgotPassword"
+                        }
+                    }
+                ],
+                "responses": {
+                    "409": {
+                        "description": "Conflict"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    },
+                    "200": {
+                        "description": "Successful Operation"
+                    }
+                }
+            }
+        },
+        "/user/reset/password": {
+            "post": {
+                "tags": [
+                    "User APIs"
+                ],
+                "summary": "response",
+                "description": "",
+                "operationId": "resetPassword",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "response",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/resetPassword"
+                        }
+                    }
+                ],
+                "responses": {
+                    "409": {
+                        "description": "Conflict"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    },
+                    "200": {
+                        "description": "Successful Operation"
+                    }
+                }
+            }
+        },
+        "/user": {
+            "get": {
+                "tags": [
+                    "User APIs"
+                ],
+                "summary": "response",
+                "description": "",
+                "operationId": "getUser",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "parameters": [],
+                "responses": {
+                    "409": {
+                        "description": "Conflict"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    },
+                    "200": {
+                        "description": "Successful Operation"
+                    }
+                }
+            }
+        },
+        "/user/delete": {
+            "delete": {
+                "tags": [
+                    "User APIs"
+                ],
+                "summary": "response",
+                "description": "",
+                "operationId": "getUser",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "parameters": [],
+                "responses": {
+                    "409": {
+                        "description": "Conflict"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    },
+                    "200": {
+                        "description": "Successful Operation"
+                    }
+                }
+            }
+        },
+        "/user/logout": {
+            "post": {
+                "tags": [
+                    "User APIs"
+                ],
+                "summary": "Logout user",
+                "description": "",
+                "operationId": "logoutUser",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "parameters": [],
+                "responses": {
+                    "409": {
+                        "description": "Conflict"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    },
+                    "200": {
+                        "description": "Successful Operation"
+                    }
+                }
+            }
+        },
+        "/user/": {
+            "put": {
+                "tags": [
+                    "User APIs"
+                ],
+                "summary": "response",
+                "description": "",
+                "operationId": "updateUser",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "response",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/updateUser"
+                        }
+                    }
+                ],
+                "responses": {
+                    "409": {
+                        "description": "Conflict"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    },
+                    "200": {
+                        "description": "Successful Operation"
+                    }
+                }
+            }
+        },
+        "/user/terms": {
+            "put": {
+                "tags": [
+                    "User APIs"
+                ],
+                "summary": "response",
+                "description": "",
+                "operationId": "updateTerms",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "response",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/updateTerms"
+                        }
+                    }
+                ],
+                "responses": {
+                    "409": {
+                        "description": "Conflict"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    },
+                    "200": {
+                        "description": "Successful Operation"
+                    }
+                }
+            }
+        },
+        "/user/status": {
+            "put": {
+                "tags": [
+                    "User APIs"
+                ],
+                "summary": "response",
+                "description": "",
+                "operationId": "userStatus",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "response",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/userStatus"
+                        }
+                    }
+                ],
+                "responses": {
+                    "409": {
+                        "description": "Conflict"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    },
+                    "200": {
+                        "description": "Successful Operation"
+                    }
+                }
+            }
+        }
+    },
+    "securitySchemes ": {
+        "bearerAuth": {
+            "type": "http",
+            "scheme": "bearer",
+            "bearerFormat": "JWT"
+        }
+    },
+    "securityDefinitions": {
+        "bearerAuth": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    },
+    "definitions": {
+        "getOTP-ForSms": {
+            "type": "object",
+            "required": [],
+            "properties": {
+                "countryCode": {
+                    "type": "string"
+                },
+                "mobileNumber": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "countryCode": "+91",
+                "mobileNumber": "9876543210"
+            }
+        },
+        "getOTP-ForEmail": {
+            "type": "object",
+            "required": [],
+            "properties": {
+                "emailId": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "emailId": "test@test.com"
+            }
+        },
+        "getOTP-ForEmailAndSms": {
+            "type": "object",
+            "required": [],
+            "properties": {
+                "emailId": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "countryCode": "+91",
+                "mobileNumber": "9876543210",
+                "emailId": "test@test.com"
+            }
+        },
+        "verifyRegister-WithSmsOTP": {
+            "type": "object",
+            "required": [
+                "smsOtp",
+                "userName",
+                "mobileNumber"
+            ],
+            "properties": {
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "countryCode": {
+                    "type": "string"
+                },
+                "mobileNumber": {
+                    "type": "string"
+                },
+                "userName": {
+                    "type": "string"
+                },
+                "emailId": {
+                    "type": "string"
+                },
+                "smsOtp": {
+                    "type": "string"
+                },
+                "emailOtp": {
+                    "type": "string"
+                },
+                "gender": {
+                    "type": "string"
+                },
+                "dob": {
+                    "type": "string"
+                },
+                "referralCode": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "profileImage": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "firstName": "MS",
+                "lastName": "Dhoni",
+                "countryCode": "+91",
+                "userName": "battle-star",
+                "mobileNumber": "9876543210",
+                "emailId": "abc@abc.com",
+                "password": "password",
+                "dob": "1998-07-03",
+                "gender": "Male",
+                "smsOtp": "123456",
+                "profileImage": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+            }
+        },
+        "verifyRegister-WithEmailOTP": {
+            "type": "object",
+            "required": [
+                "emailOtp",
+                "userName",
+                "emailId"
+            ],
+            "properties": {
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "countryCode": {
+                    "type": "string"
+                },
+                "mobileNumber": {
+                    "type": "string"
+                },
+                "userName": {
+                    "type": "string"
+                },
+                "emailId": {
+                    "type": "string"
+                },
+                "smsOtp": {
+                    "type": "string"
+                },
+                "emailOtp": {
+                    "type": "string"
+                },
+                "gender": {
+                    "type": "string"
+                },
+                "dob": {
+                    "type": "string"
+                },
+                "referralCode": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "profileImage": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "firstName": "MS",
+                "lastName": "Dhoni",
+                "countryCode": "+91",
+                "userName": "battle-star",
+                "mobileNumber": "9876543210",
+                "emailId": "abc@abc.com",
+                "password": "password",
+                "dob": "1998-07-03",
+                "gender": "Male",
+                "emailOtp": "123456",
+                "profileImage": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+            }
+        },
+        "verifyRegister-WithEmailAndSmsOTP": {
+            "type": "object",
+            "required": [
+                "smsOtp",
+                "userName",
+                "mobileNumber"
+            ],
+            "properties": {
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "countryCode": {
+                    "type": "string"
+                },
+                "mobileNumber": {
+                    "type": "string"
+                },
+                "userName": {
+                    "type": "string"
+                },
+                "emailId": {
+                    "type": "string"
+                },
+                "smsOtp": {
+                    "type": "string"
+                },
+                "emailOtp": {
+                    "type": "string"
+                },
+                "gender": {
+                    "type": "string"
+                },
+                "dob": {
+                    "type": "string"
+                },
+                "referralCode": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "profileImage": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "firstName": "MS",
+                "lastName": "Dhoni",
+                "countryCode": "+91",
+                "userName": "pre-test-demo",
+                "mobileNumber": "9090909092",
+                "emailId": "pretestdemo3@demo.com",
+                "password": "Password@123",
+                "dob": "1998-07-03",
+                "gender": "Male",
+                "smsOtp": "123456",
+                "emailOtp": "123456",
+                "profileImage": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+            }
+        },
+        "verifyLogin-WithSmsOTP": {
+            "type": "object",
+            "required": [
+                "otp"
+            ],
+            "properties": {
+                "mobileNumber": {
+                    "type": "string"
+                },
+                "emailId": {
+                    "type": "string"
+                },
+                "smsOtp": {
+                    "type": "string"
+                },
+                "emailOtp": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "mobileNumber": "9876543210",
+                "smsOtp": "123456"
+            }
+        },
+        "verifyLogin-WithEmailOTP": {
+            "type": "object",
+            "required": [
+                "otp"
+            ],
+            "properties": {
+                "mobileNumber": {
+                    "type": "string"
+                },
+                "emailId": {
+                    "type": "string"
+                },
+                "smsOtp": {
+                    "type": "string"
+                },
+                "emailOtp": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "emailId": "test@test.com",
+                "emailOtp": "123456"
+            }
+        },
+        "verifyLogin-WithEmailAndSmsOTP": {
+            "type": "object",
+            "required": [
+                "otp"
+            ],
+            "properties": {
+                "mobileNumber": {
+                    "type": "string"
+                },
+                "emailId": {
+                    "type": "string"
+                },
+                "smsOtp": {
+                    "type": "string"
+                },
+                "emailOtp": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "mobileNumber": "9090909092",
+                "emailId": "test@test.com",
+                "smsOtp": "123456",
+                "emailOtp": "123456"
+            }
+        },
+        "loginWithPassword": {
+            "type": "object",
+            "required": [
+                "emaiIdOrMobile",
+                "password"
+            ],
+            "properties": {
+                "emaiIdOrMobile": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "emaiIdOrMobile": "9876543210",
+                "password": "password"
+            }
+        },
+        "loginWithUsername": {
+            "type": "object",
+            "required": [
+                "userName",
+                "password"
+            ],
+            "properties": {
+                "userName": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "userName": "battle-star",
+                "password": "password"
+            }
+        },
+        "changePassword": {
+            "type": "object",
+            "required": [
+                "currentPassword",
+                "password",
+                "confirmPassword"
+            ],
+            "properties": {
+                "currentPassword": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "confirmPassword": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "currentPassword": "password",
+                "password": "password",
+                "confirmPassword": "password"
+            }
+        },
+        "forgotPassword": {
+            "type": "object",
+            "required": [
+                "emaiIdOrMobile"
+            ],
+            "properties": {
+                "emaiIdOrMobile": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "emaiIdOrMobile": "8277362212"
+            }
+        },
+        "resetPassword": {
+            "type": "object",
+            "required": [
+                "password",
+                "confirmPassword"
+            ],
+            "properties": {
+                "password": {
+                    "type": "string"
+                },
+                "confirmPassword": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "password": "password",
+                "confirmPassword": "password"
+            }
+        },
+        "updateUser": {
+            "type": "object",
+            "required": [],
+            "properties": {
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "countryCode": {
+                    "type": "string"
+                },
+                "mobileNumber": {
+                    "type": "string"
+                },
+                "userName": {
+                    "type": "string"
+                },
+                "emailId": {
+                    "type": "string"
+                },
+                "gender": {
+                    "type": "string"
+                },
+                "dob": {
+                    "type": "string"
+                },
+                "profileImage": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "firstName": "MS",
+                "lastName": "Dhoni",
+                "countryCode": "+91",
+                "userName": "battle-star",
+                "mobileNumber": "9876543210",
+                "emailId": "abc@abc.com",
+                "dob": "1998-07-03",
+                "gender": "Male",
+                "profileImage": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+            }
+        },
+        "updateTerms": {
+            "type": "object",
+            "required": [
+                "termsAgreed"
+            ],
+            "properties": {
+                "termsAgreed": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "termsAgreed": true
+            }
+        },
+        "userStatus": {
+            "type": "object",
+            "required": [
+                "status"
+            ],
+            "properties": {
+                "status": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "status": "ACTIVE"
+            }
+        }
+    },
+    "externalDocs": {
+        "description": "Find out more about Swagger",
+        "url": "http://swagger.io"
+    }
+}
