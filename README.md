@@ -7,8 +7,8 @@ A User Service Node.js app using [Express 4](http://expressjs.com/).
 Make sure you have [Node.js](http://nodejs.org/)
 
 ```sh
-git clone https://solbaacken.git.beanstalkapp.com/doodleblue_user_service.git
-cd doodleblue_user_service
+git clone https://solbaacken.git.beanstalkapp.com/{name_of_repo}.git
+cd {name_of_repo}
 npm install
 npm run local
 ```
