@@ -4,7 +4,7 @@
   "description": "Animeta Instagram URL Picker",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js DEV",
+    "start": "nodemon app.js DEV",
     "dev": "node app.js DEV",
     "local": "nodemon app.js LOCAL",
     "seed": "node seed.js",

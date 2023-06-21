@@ -9,5 +9,6 @@ let validator = require("express-joi-validation").createValidator({
 });
 
 instagramFetcherRoutes.post('/fetchUrl', instagramUrlFetcher.fetchUrlData);
+instagramFetcherRoutes.post('/downloadUrlData', instagramUrlFetcher.downloadUrlData);
 
 module.exports = instagramFetcherRoutes;

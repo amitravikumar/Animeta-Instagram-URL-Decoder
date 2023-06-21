@@ -30,7 +30,7 @@ if (cluster.isMaster) {
   let detectHeapOverflow = () => {
     let stats = v8.getHeapStatistics();
 
-    console.log("total_heap_size: " + (stats.total_heap_size));
+    // console.log("total_heap_size: " + (stats.total_heap_size));
 
     if ((stats.total_heap_size) > totalHeapSizeThreshold) {
       process.exit();

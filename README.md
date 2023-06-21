@@ -13,4 +13,4 @@ npm install
 npm run local
 ```
 
-Your app should now be running on [localhost:2181](http://localhost:2181/).
+Your app should now be running on [localhost:2181](http://localhost:2181/)
