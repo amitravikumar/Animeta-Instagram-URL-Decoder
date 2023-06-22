@@ -52,7 +52,7 @@ async function downloadVideo(url, videoFilename) {
     try {
         console.log(`Downloading videos to: ${videoPath}`);
         const response = await fetch(url);
-        const fileStream = fs.createWriteStream(path.join(videoPath, videoFilename), { flags: 'a' });
+        const fileStream = fs.createWriteStream(path.join(videoPath, `IG_${videoFilename}.mp4`), { flags: 'a' });
         await pipeline(response.body, fileStream);
         console.log(`Downloaded video: ${path.join(videoPath, videoFilename)}`);
     } catch (error) {
